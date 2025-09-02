@@ -619,7 +619,7 @@ function App() {
               <div className="chat-input-form">
                 <div className="input-wrapper">
                   <textarea value={message} onChange={(e) => setMessage(e.target.value)} onKeyPress={handleKeyPress}
-                            placeholder={isListening ? "Listening..." : "Type your message or upload a file..."}
+                            placeholder={isListening ? "Listening..." : "ASK ME or upload a file..."}
                             disabled={isLoading || !isAuthReady || !userId || isListening || isProcessingFile} className="chat-input" rows={1} />
                 </div>
                 <div className="chat-input-actions">
