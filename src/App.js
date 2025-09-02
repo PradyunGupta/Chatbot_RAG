@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Upload, Send, FileText, MessageCircle, AlertCircle, XCircle, Brain, PlusCircle, MessageSquare, Trash2, LogOut, User, Mic, Volume2, VolumeX, Copy } from 'lucide-react';
+import { Upload, Send, FileText, MessageCircle, AlertCircle, XCircle, Brain, PlusCircle, MessageSquare, Trash2, LogOut, User, Mic, Copy, Volume2 } from 'lucide-react';
 import removeMarkdown from 'remove-markdown';
 
 import { initializeApp } from 'firebase/app';
@@ -149,7 +149,6 @@ function App() {
   }, [error]);
 
   useEffect(() => {
-    // Initialize Speech Recognition and Synthesis
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (SpeechRecognition) {
       const recognition = new SpeechRecognition();
@@ -619,7 +618,7 @@ function App() {
               <div className="chat-input-form">
                 <div className="input-wrapper">
                   <textarea value={message} onChange={(e) => setMessage(e.target.value)} onKeyPress={handleKeyPress}
-                            placeholder={isListening ? "Listening..." : "ASK ME or upload a file..."}
+                            placeholder={isListening ? "Listening..." : "ASK Me/ Upload File..."}
                             disabled={isLoading || !isAuthReady || !userId || isListening || isProcessingFile} className="chat-input" rows={1} />
                 </div>
                 <div className="chat-input-actions">
@@ -642,4 +641,3 @@ function App() {
 }
 
 export default App;
-
