@@ -71,7 +71,7 @@ app.add_middleware(
 
 try:
     llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=GOOGLE_API_KEY, temperature=0.7)
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=GOOGLE_API_KEY)
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001", google_api_key=GOOGLE_API_KEY)
     pc = PineconeClient(api_key=PINECONE_API_KEY)
 
     GEMINI_EMBEDDING_DIMENSION = 768
